@@ -22,9 +22,10 @@ DESCRIPTION
 Yet another url sorter
 ----------------------
 
-boltsort Varnish vmod is used for sorting querystring.
-Insertion sort on the fly on tokenized querystring params makes it twice as fast as current qsort implementations
-Uses custom param compare instead of storing param lengths for each querystring param means lesser stack usage
+boltsort Varnish vmod sorts querystring.
+
+* Insertion sort on tokenized querystring params makes it twice as fast as current qsort implementations
+* Custom param compare instead of storing param lengths for each querystring param means lesser stack usage
 
 
 FUNCTIONS
