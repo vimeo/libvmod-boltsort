@@ -13,14 +13,18 @@ Varnish boltsort Module
 
 SYNOPSIS
 ========
+At Vimeo we use Varnish to cache our player traffic. It has worked out great for us. 
 
-import boltsort;
+Varnish at this point has no built in module to sort querystrings.  
+Say I have two of these:
+
+* /video/48088296?title=0&byline=0&portrait=0&color=51a516
+* /video/48088296?byline=0&color=51a516&portrait=0&title=0
+
+Boltsort sorts the querystring and ensures that Varnish treats the above one and the same.
 
 DESCRIPTION
 ===========
-
-Yet another url sorter
-----------------------
 
 boltsort Varnish vmod sorts querystring.
 
