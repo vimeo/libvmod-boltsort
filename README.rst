@@ -57,6 +57,8 @@ Same as libvmod-example installation instructions
 
 Usage::
 
+ yum install python-docutils or apt-get install python-docutils
+ ./autogen.sh
  ./configure VARNISHSRC=DIR [VMODDIR=DIR]
 
 `VARNISHSRC` is the directory of the Varnish source tree for which to
