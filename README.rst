@@ -1,10 +1,10 @@
-============
+=============
 vmod_boltsort
-============
+=============
 
-----------------------
+-----------------------
 Varnish boltsort Module
-----------------------
+-----------------------
 
 :Author: Naren Venkataraman
 :Date: 2012-09-01
@@ -13,7 +13,9 @@ Varnish boltsort Module
 
 SYNOPSIS
 ========
-At Vimeo we use Varnish to cache our player traffic. It has worked out great for us. 
+
+At Vimeo we use Varnish Cache to cache our player traffic. It has
+worked out great for us.
 
 Varnish at this point has no built in module to sort querystrings.  
 Say I have two of these:
@@ -21,12 +23,13 @@ Say I have two of these:
 * /video/48088296?title=0&byline=0&portrait=0&color=51a516
 * /video/48088296?byline=0&color=51a516&portrait=0&title=0
 
-Boltsort sorts the querystring and ensures that Varnish treats the above one and the same.
+Boltsort sorts the querystring and ensures that Varnish treats the
+above one and the same.
 
 DESCRIPTION
 ===========
 
-boltsort Varnish vmod sorts querystring.
+The boltsort Varnish vmod sorts querystring.
 
 * Insertion sort on tokenized querystring params makes it twice as fast as current qsort implementations
 * Custom param compare instead of storing param lengths for each querystring param means lesser stack usage
