@@ -3,7 +3,7 @@
 #include <string.h>
 
 #include "vrt.h"
-#include "bin/varnishd/cache.h"
+#include "cache/cache.h"
 
 #define MAX_PARAM_COUNT 32
 #define EQUALS(c, h) ((c == h) || (c == '\0' && h == '&') || (c == '&' && h == '\0'))
@@ -44,7 +44,7 @@ int init_function(struct vmod_priv *priv, const struct VCL_conf *conf)
 }
 
 //sort query string
-const char * vmod_sort(struct sess *sp, const char *url)
+const char * vmod_sort(const struct vrt_ctx *ctx, const char *url)
 {
 
     if (url == NULL) {
@@ -101,7 +101,7 @@ const char * vmod_sort(struct sess *sp, const char *url)
     }
 
     //allocate space for sorted url
-    struct ws *ws = sp->wrk->ws;
+    struct ws *ws = ctx->ws;
     dst_url = WS_Alloc(ws, strchr(param, '\0') - url + 1);
     WS_Assert(ws);
 
