@@ -62,11 +62,7 @@ Usage::
 
  yum install python-docutils or apt-get install python-docutils
  ./autogen.sh
- ./configure VARNISHSRC=DIR [VMODDIR=DIR]
-
-`VARNISHSRC` is the directory of the Varnish source tree for which to
-compile your vmod. Both the `VARNISHSRC` and `VARNISHSRC/include`
-will be added to the include search paths for your module.
+ ./configure [VMODDIR=DIR]
 
 Optionally you can also set the vmod install directory by adding
 `VMODDIR=DIR` (defaults to the pkg-config discovered directory from your
