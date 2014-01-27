@@ -13,6 +13,10 @@ varnish v1 -vcl+backend {
 
     import boltsort from "${vmod_topbuild}/src/.libs/libvmod_boltsort.so";
 
+    sub vcl_hit {
+        set obj.hits = obj.hits + 1;
+    }
+
     sub vcl_hash {
         set req.url = boltsort.sort(req.url);
     }
