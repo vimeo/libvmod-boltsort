@@ -1,3 +1,5 @@
-$Module boltsort
+$Module boltsort 3
+
 $Init init_function
+
 $Function STRING sort(STRING)
