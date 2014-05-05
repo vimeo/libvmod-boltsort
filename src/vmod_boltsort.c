@@ -44,7 +44,8 @@ int init_function(struct vmod_priv *priv, const struct VCL_conf *conf)
 }
 
 //sort query string
-const char * vmod_sort(const struct vrt_ctx *ctx, const char *url)
+VCL_STRING
+vmod_sort(const struct vrt_ctx *ctx, VCL_STRING url)
 {
 
     if (url == NULL) {
